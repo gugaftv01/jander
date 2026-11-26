@@ -37,11 +37,11 @@
       linear-gradient(90deg,var(--card) 0%,var(--card) 33%,rgba(10,10,10,.35) 60%,transparent 82%)}
   .body{position:relative;z-index:2;padding:22px 20px;max-width:70%;display:flex;flex-direction:column;height:100%;justify-content:center;min-height:196px}
   .hdr{display:flex;align-items:center;gap:11px;margin-bottom:5px}
-  .pico{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;box-shadow:0 7px 16px rgba(0,0,0,.45)}
+  .pico{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;box-shadow:0 7px 16px rgba(0,0,0,.45);animation:popPico .7s cubic-bezier(.34,1.56,.64,1) both}
   .pico svg{width:26px;height:26px;display:block}
-  .pico-ig{background:linear-gradient(45deg,#f09433,#e6683c 30%,#dc2743 55%,#cc2366 75%,#bc1888)}
-  .pico-wa{background:#25D366}
-  .pico-yt{background:#ff0000}
+  .pico-ig{background:linear-gradient(45deg,#f09433,#e6683c 30%,#dc2743 55%,#cc2366 75%,#bc1888);animation-delay:2.9s}
+  .pico-wa{background:#25D366;animation-delay:3.06s}
+  .pico-yt{background:#ff0000;animation-delay:3.22s}
   .tag{font-family:'Poppins',sans-serif;font-weight:700;font-size:10px;letter-spacing:.24em;color:var(--ac);text-transform:uppercase}
   .banner h2{font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;line-height:1.2;margin:8px 0 15px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.4)}
   .banner h2 b{color:var(--ac)}
@@ -81,7 +81,8 @@
     font-family:'Poppins',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.3em;color:var(--laranja);text-transform:uppercase}
   @keyframes construirLogo{to{clip-path:inset(0 0 0 0)}}
   @keyframes surgir{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){#splash .logo-casa{clip-path:none;animation:none}#splash .nm,#splash .sb{opacity:1;transform:none;animation:none}}
+  @keyframes popPico{0%{transform:scale(.2);opacity:0}55%{transform:scale(1.22);opacity:1;filter:brightness(1.7) drop-shadow(0 0 10px rgba(255,255,255,.6))}75%{transform:scale(.92)}100%{transform:scale(1);opacity:1;filter:none}}
+  @media (prefers-reduced-motion:reduce){#splash .logo-casa{clip-path:none;animation:none}#splash .nm,#splash .sb{opacity:1;transform:none;animation:none}.pico{animation:none}}
   /* ===== COMPUTADOR: coluna mais larga e banners grandes (estilo Rodrigo Silva) ===== */
   @media (min-width:760px){
     body{padding:44px 24px 64px}
